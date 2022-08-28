@@ -1,0 +1,16 @@
+https://reactresources.com/topics/advanced-concepts
+react context api
+react fiber
+difference react 15 to react 16
+all react hooks
+difference between useEffect and UseLayoutEffect hooks
+difference between useMemo and UseCallback hooks
+how to call api from useffect using fetch
+keys in react
+Vdom working
+advanages of react
+Redux life cycle
+use of Redux
+redux middlewares
+what are reducers
+Why redux is used?
