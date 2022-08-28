@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Qrscan from './QrScannerModal';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Qrscan />
   </React.StrictMode>,
   document.getElementById('root')
 );
