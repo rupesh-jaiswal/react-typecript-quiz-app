@@ -16,7 +16,7 @@ const TOTAL_QUESTIONS = 2;
 const Qrscan = () => {
     let qrScanner: QrScanner | null = null;
     const [camList, setCamList] = useState<any[]>([]);
-
+    const [selectedCamera, setSelectedCamera]  =useState("");
     const getCameras = async() => {
         const camList: ((prevState: never[]) => never[]) | { id: string; label: string; }[] =[];
         const cameras = await QrScanner.listCameras(true);
@@ -56,8 +56,15 @@ const Qrscan = () => {
         
     }
   }, [])
-  const onCameraChange = (event: { target: { value: string; }; }) => {
-    qrScanner?.setCamera(event?.target.value);
+
+  useEffect(() => {
+    qrScanner?.stop();
+    qrScanner?.setCamera(selectedCamera);
+
+    qrScanner?.start(); 
+  }, [selectedCamera]);
+  const onCameraChange = async (event: { target: { value: string; }; }) => {
+    setSelectedCamera(event?.target?.value);
   };
   return (
     <>
